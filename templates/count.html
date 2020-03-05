@@ -1,0 +1,17 @@
+<h1>There are {{ count }} words in your text.</h1>
+
+<form action="{% url 'home' %}">
+    <input type="submit" value="START NEW COUNT" />
+</form>
+
+<h1>Your Text:</h1>
+<p>{{ full_text }}</p>
+
+<h1>Keyword Density</h1>
+
+{% for word, counttotal in sortedwords %}
+
+{{ word }} - {{ counttotal }}
+<br>
+
+{% endfor %}
